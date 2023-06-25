@@ -22,52 +22,52 @@ export const categories = [
   {
     label: "Beach",
     icon: TbBeach,
-    descriptiopn: "This property is close to the beach!",
+    description: "This property is close to the beach!",
   },
   {
     label: "Windmills",
     icon: GiWindmill,
-    descriptiopn: "This property has windmills!",
+    description: "This property has windmills!",
   },
   {
     label: "Modern",
     icon: MdOutlineVilla,
-    descriptiopn: "This property is modern!",
+    description: "This property is modern!",
   },
   {
     label: "Countryside",
     icon: TbMountain,
-    descriptiopn: "This property is in the countryside!",
+    description: "This property is in the countryside!",
   },
   {
     label: "Pools",
     icon: TbPool,
-    descriptiopn: "This property has a pool!",
+    description: "This property has a pool!",
   },
   {
     label: "Islands",
     icon: GiIsland,
-    descriptiopn: "This property is on an island!",
+    description: "This property is on an island!",
   },
   {
     label: "Lake",
     icon: GiBoatFishing,
-    descriptiopn: "This property is close to a lake!",
+    description: "This property is close to a lake!",
   },
   {
     label: "Skiing",
     icon: FaSkiing,
-    descriptiopn: "This property has skiing activities!",
+    description: "This property has skiing activities!",
   },
   {
     label: "Castles",
     icon: GiCastle,
-    descriptiopn: "This property is in a castle!",
+    description: "This property is in a castle!",
   },
   {
     label: "Camping",
     icon: GiForestCamp,
-    descriptiopn: "This property has camping activities!",
+    description: "This property has camping activities!",
   },
   {
     label: "Arctic",
