@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Range } from "react-date-range";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
+import { differenceInDays, eachDayOfInterval } from "date-fns";
 import { Reservation } from "@prisma/client";
 import { useRouter } from "next/navigation";
 
@@ -84,11 +84,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
-      const dayCount = differenceInCalendarDays(
-        dateRange.startDate,
-        dateRange.endDate
-      );
-
+      const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);
       if (dayCount && listing.price) {
         setTotalPrice(dayCount * listing.price);
       } else {
