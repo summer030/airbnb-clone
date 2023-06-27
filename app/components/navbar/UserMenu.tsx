@@ -1,8 +1,7 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef, useEffect } from "react";
 import { signOut } from "next-auth/react";
-import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 
 import { AiOutlineMenu } from "react-icons/ai";
@@ -23,6 +22,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
   }, []);
@@ -33,6 +33,18 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
     }
     rentModal.onOpen();
   }, [currentUser, loginModal, rentModal]);
+
+  useEffect(() => {
+    function handleClickOutside(e: any) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="relative">
@@ -80,6 +92,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       </div>
       {isOpen && (
         <div
+          ref={menuRef}
           className="
             absolute
             rounded-xl
