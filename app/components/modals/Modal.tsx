@@ -133,7 +133,7 @@ const Modal: React.FC<ModalProps> = ({
                 "
               >
                 <button
-                  onClick={onClose}
+                  onClick={handleClose}
                   className="
                     p-1
                     border-0
