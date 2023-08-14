@@ -12,7 +12,7 @@ This is a repository for a Full Stack Airbnb Clone Tutorial with [Next.js](https
 npm install
 
 # setup prisma
-npx prisma db bash
+npx prisma db push
 
 # start the app
 npm run dev
